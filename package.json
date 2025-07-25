@@ -1,0 +1,37 @@
+{
+  "name": "界园投币计算器",
+  "private": true,
+  "version": "0.0.1",
+  "homepage": "https://[your-github-username].github.io/[your-repo-name]/",
+  "type": "module",
+  "scripts": {
+    "dev:client": "vite --host --port 3000",
+    "dev": "pnpm dev:client",
+    "build:client": "vite build --outDir docs",
+   "build": "@echo on && echo [1/5] Starting build process && (if exist docs (echo [2/5] Removing existing docs directory && rmdir /s /q docs || echo [2/5] Failed to remove docs directory, continuing build...) else (echo [2/5] No existing docs directory to remove)) && echo [3/5] Running Vite build... && pnpm build:client && (echo [4/5] Vite build completed successfully && echo [5/5] Copying necessary files... && copy package.json docs && type nul > docs/build.flag && echo Build completed successfully! docs directory created. && exit 0) || (echo ERROR: Build failed during Vite build step! Check the error messages above for details. && exit 1)",
+   "preview": "if not exist docs (echo Error: docs directory not found! Please run 'pnpm build' first. && exit 1) else (echo Starting preview server... && vite preview --port 8080 --outDir docs)",
+    "fix-npm-warnings": "npm config delete verify-deps-before-run && npm config delete _jsr-registry"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.9.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.3.0",
+    "recharts": "^2.15.1",
+    "sonner": "^2.0.2",
+    "tailwind-merge": "^3.0.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
